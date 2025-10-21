@@ -27,6 +27,7 @@ Ads: Built-in ads visible to users to generate additional revenue through sponso
 This model creates a scalable and sustainable source of income while offering students flexibility in choosing the level of support they need
 
 Signatures:
+Tsedenya Ketema 
 Leticia Bromley
 Lexie Dallison
 Aron Hernandez
