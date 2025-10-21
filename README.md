@@ -29,3 +29,4 @@ This model creates a scalable and sustainable source of income while offering st
 Signatures:
 Leticia Bromley
 Lexie Dallison
+Aron Hernandez
