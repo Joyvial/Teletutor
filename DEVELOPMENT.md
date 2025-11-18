@@ -104,35 +104,35 @@ Teletutor/
 ## Task Breakdown (Assign to Team Members)
 
 ### Task 1: Homepage & Login System
-**Assignee:** _______
+**Assignee:** Letecia 
 - Create `index.html` with hero section and feature highlights
 - Create `login.html` with user type selection
 - Create `signup.html` with registration forms
 - Link all pages together
 
 ### Task 2: Student Dashboard & Question Flow
-**Assignee:** _______
+**Assignee:** Aron
 - Create `student-dashboard.html` with active questions
 - Create `ask-question.html` form
 - Create `questions.html` community board
 - Add mock data for sample questions
 
 ### Task 3: Tutor Dashboard & Profile
-**Assignee:** _______
+**Assignee:** Tsedenya
 - Create `tutor-dashboard.html` with availability toggle
 - Create `tutor-profile.html` with ratings/bio
 - Add sample tutor data (at least 3 tutors)
 - Implement answer question interface
 
 ### Task 4: Guardian Dashboard
-**Assignee:** _______
+**Assignee:** Lexie
 - Create `guardian-dashboard.html` with student overview
 - Display mock student activity data
 - Add subscription management section
 - Create notification preferences mockup
 
 ### Task 5: CSS Styling & Design
-**Assignee:** _______
+**Assignee:** Pooja
 - Create `style.css` with consistent color scheme
 - Style all pages with responsive design
 - Add hover effects and transitions
