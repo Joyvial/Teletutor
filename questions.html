@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teletutor — Questions Board</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Teletutor</a>
+      <nav class="nav">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="questions.html" class="active">Questions</a>
+        <a href="tutor-profile.html">Tutors</a>
+        <a href="login.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero small-hero">
+      <h1>Community Board — Calculus</h1>
+      <p class="muted">Browse or ask — free tier community questions.</p>
+      <div class="cta-row">
+        <a href="ask-question.html" class="btn primary">Ask Question</a>
+        <div class="filter-group">
+          <button class="btn" onclick="filterQuestions('all')">All</button>
+          <button class="btn" onclick="filterQuestions('answered')">Answered</button>
+          <button class="btn" onclick="filterQuestions('unanswered')">Unanswered</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="questions-list" class="card-list">
+        <!-- JS will render question cards here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderQuestions();
+    });
+  </script>
+</body>
+</html>
