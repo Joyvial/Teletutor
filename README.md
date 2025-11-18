@@ -30,7 +30,7 @@ Lexie Dallison,
 Aron Hernandez,
 Pooja Lamsal
 
-_________________________________________________________________________
+___
 
 Notes
 -add a license file
