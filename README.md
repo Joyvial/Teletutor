@@ -29,3 +29,40 @@ Leticia Bromley,
 Lexie Dallison,
 Aron Hernandez,
 Pooja Lamsal
+
+
+Notes
+-add a license file
+-ensure to add branches for individual pieces of code
+-ensure to create pull requests to review code before committing
+-delete duplicate files
+-uniform naming of variables
+
+Beta Idea > Calculus (Pre through Multivariable) 
+
+Main Page > Login Page
+		-Student
+		-Teacher
+		-Parents
+		-Admin (only our group)
+
+Sub Pages:
+	> About Us
+	> Subscriptions 
+		> Different subscription model:
+tutor anytime 24/7 (coming soon!) 
+wait for beta success to hire more tutors to work on an hourly basis 
+3 shifts / day - 8 hour shifts where tutors are available
+specific tutor model  - pay to work with one tutor of choice on a scheduled basis
+use this for beta
+
+
+free model — Reddit / ChatGPT based model with responses in real time but no access to direct tutors
+> Find a Tutor
+	> pages with information about all tutors
+
+Features:
+	>  graphing progress
+	>  about page about tutors 
+	> 
+
