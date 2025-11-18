@@ -51,11 +51,10 @@ Sub Pages:
 	> About Us
 	> Subscriptions 
 		> Different subscription model:
-tutor anytime 24/7 (coming soon!) 
-wait for beta success to hire more tutors to work on an hourly basis 
-3 shifts / day - 8 hour shifts where tutors are available
-specific tutor model  - pay to work with one tutor of choice on a scheduled basis
-use this for beta
+			1) tutor anytime 24/7 (coming soon!) 
+			2) wait for beta success to hire more tutors to work on an hourly basis 
+			3) 3 shifts / day - 8 hour shifts where tutors are available
+			4) specific tutor model  - pay to work with one tutor of choice on a scheduled basis use this for beta
 
 
 free model — Reddit / ChatGPT based model with responses in real time but no access to direct tutors
