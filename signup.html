@@ -1,0 +1,60 @@
+<!--
+To Do List:
+  • For student, use inputs:
+    • First / Last Name
+    • Email
+    • Age (Dropdown?)
+    • Grade
+    • Subject (Dropdown, with a note saying that they will be able to choose others later)
+    • ??
+  • For parent, use inputs (Should parent sign up create student account? Have option to add more than one kid??):
+    • First / Last Name
+    • Email
+    • Student First / Last Name
+    • Student Grade
+    • Student Subject (Dropdown, with a note saying that they will be able to choose others later)
+    • ??
+  • For tutor, use inputs:
+    • First / Last Name
+    • Email
+    • Subject Expertise (Select all that apply)
+    • Is this more akin to a hiring process? Can just *anyone* apply, or should this not even be through the website at all?
+    • ??
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styling.css">
+    <script type="text/javascript" src="validation.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Sign Up</h1>
+        <p id="error-message"></p>
+        <form id="form">
+            <h2>First Name</h2>
+            <div>
+                <input type="text" name="firstname" id="firstname-input">
+            </div>
+            <h2>Email</h2>
+            <div>
+                <input type="email" name="email" id="email-input">
+            </div>
+            <h2>Password</h2>
+            <div>
+                <input type="password" name="password" id="password-input">
+            </div>
+            <h2>Confirm Password</h2>
+            <div>
+                <input type="password" name="repeat-password" id="repeat-password-input">
+            </div>
+            <button type-"submit">Sign Up</button>
+        </form>
+        <p1>Already have an account? <a href="login.html">Log In</a></p1>
+    </div>
+</body>
+</html>
