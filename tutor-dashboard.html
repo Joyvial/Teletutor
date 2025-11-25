@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutor Dashboard</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <h1>Tutor Dashboard</h1>
+
+    <!-- Welcome / Goodbye messages (FROM Alex Karen TO students) -->
+    <section>
+        <h2>Messages from Alex Karen</h2>
+        <p><strong>Welcome message:</strong> 
+            Hello student! This is Alex Karen. I’m excited to help you learn and understand mathematics today.
+        </p>
+
+        <p><strong>Goodbye message:</strong> 
+            Thank you for studying with me! – Alex Karen
+        </p>
+    </section>
+
+    <!-- Availability toggle -->
+    <section>
+        <h2>Alex Karen’s Availability</h2>
+        <p>Select current tutoring status:</p>
+
+        <label>
+            <input type="radio" name="availability" value="available">
+            Available
+        </label><br>
+
+        <label>
+            <input type="radio" name="availability" value="unavailable">
+            Unavailable
+        </label>
+    </section>
+
+    <!-- Questions from students -->
+    <section>
+        <h2>Questions from Students</h2>
+        <table border="1">
+            <tr>
+                <th>Student Name</th>
+                <th>Subject</th>
+                <th>Question</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Student A</td>
+                <td>Calculus I</td>
+                <td>Can you explain the chain rule?</td>
+                <td>Not answered</td>
+            </tr>
+            <tr>
+                <td>Student B</td>
+                <td>Multivariable Calculus</td>
+                <td>What is a gradient vector?</td>
+                <td>Answered</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Writing grades -->
+    <section>
+        <h2>Enter / Update Grades</h2>
+        <form>
+            <label>Student Name:
+                <input type="text" name="studentName">
+            </label><br><br>
+
+            <label>Course:
+                <input type="text" name="courseName">
+            </label><br><br>
+
+            <label>Grade:
+                <input type="text" name="grade">
+            </label><br><br>
+
+            <input type="submit" value="Save Grade">
+        </form>
+    </section>
+
+    <!-- Answer Question Interface -->
+    <section>
+        <h2>Answer a Question</h2>
+        <form>
+            <p><strong>Selected question from a student:</strong></p>
+            <textarea rows="3" cols="60" readonly>
+Example: Can you help me with partial derivatives?
+            </textarea><br><br>
+
+            <label>Your Answer (Alex Karen):<br>
+                <textarea rows="5" cols="60" name="answer"></textarea>
+            </label><br><br>
+
+            <input type="submit" value="Send Answer">
+        </form>
+    </section>
+
+    <!-- Tutor summary earnings -->
+    <section>
+        <h2>Alex Karen’s Earnings Summary</h2>
+        <table border="1">
+            <tr>
+                <th>Total Sessions</th>
+                <th>Rate per Session</th>
+                <th>Total Earnings</th>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>$25</td>
+                <td>$250</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Student session request button -->
+    <section>
+        <h2>Request a Session with Alex Karen</h2>
+        <button type="button">Request Session</button>
+    </section>
+
+</body>
+</html>
