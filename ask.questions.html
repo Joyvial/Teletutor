@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teletutor — Ask a Question</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Teletutor</a>
+      <nav class="nav">
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="questions.html">Questions</a>
+        <a href="ask-question.html" class="active">Ask Question</a>
+        <a href="login.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Ask a Question</h1>
+    <form id="ask-form">
+      <label>Title
+        <input type="text" id="title" required>
+      </label>
+
+      <label>Description
+        <textarea id="description" rows="7" required></textarea>
+      </label>
+
+      <label>Subject
+        <select id="subject">
+          <option>Calculus</option>
+        </select>
+      </label>
+
+      <label>Urgency
+        <select id="urgency">
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </label>
+
+      <label>Attach file (optional)
+        <input type="file" id="attachment" disabled>
+        <small class="muted">Attachment UI is non-functional for this mockup.</small>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Submit Question</button>
+        <a href="student-dashboard.html" class="btn">Cancel</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      attachAskFormHandler();
+    });
+  </script>
+</body>
+</html>
