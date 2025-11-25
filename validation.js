@@ -4,6 +4,24 @@ const email_input = document.getElementById('email-input')
 const password_input = document.getElementById('password-input')
 const repeat_password_input = document.getElementById('repeat-password-input')
 const error_message = document.getElementById('error-message')
+const params = new URLSearchParams(window.location.search);
+const userType = params.get('userType');
+
+if (userType === 'tutor') 
+{
+    document.documentElement.style.setProperty('--accent-color', '#ff8c75');
+    document.documentElement.style.setProperty('--background-image', 'url(images/red-bg.png)')
+}
+else if (userType === 'student')
+{
+    document.documentElement.style.setProperty('--accent-color', '#7fa66a');
+    document.documentElement.style.setProperty('--background-image', 'url(images/green-bg.png)')
+}
+else if (userType === 'guardian')
+{
+    document.documentElement.style.setProperty('--accent-color', '#a3cbff');
+    document.documentElement.style.setProperty('--background-image', 'url(images/blue-bg.png)')
+}
 
 form.addEventListener('submit', (e) => 
 {
