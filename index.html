@@ -10,29 +10,34 @@
   <div class="landing-wrapper">
     <h1>Teletutor</h1>
     <h2 class="lead">You are a</h2>
+    <script> function goToLogin(userType) { window.location.href = login.html?userType=${userType}; } 
+      function goToSignup(userType) { window.location.href = signup.html?userType=${userType}; } </script>
 
     <div class="role-grid">
       <section class="role-card student-card">
         <h2>Student</h2>
         <div class="role-actions">
-          <a class="btn" href=" ">Log In</a>
-          <a class="btn outline" href="type=student">Sign Up</a>
+          <a class="btn" onclick="goToLogin('student');">Log In</a>
+          <a class="btn outline" onclick="goToSignup('student');">Sign Up</a>
         </div>
       </section>
 
-      <section class="role-card parent-card">
+      <section class="role-card guardian-card">
         <h2>Parent</h2>
         <div class="role-actions">
-          <a class="btn" href="type=parent ">Log In</a>
-          <a class="btn outline" href="type=parent">Sign Up</a>
+          <a class="btn" onclick="goToLogin('guardian');">Log In</a>
+           <a class="btn outline" onclick="goToSignup('guardian');">Sign Up</a>
+          
         </div>
       </section>
 
       <section class="role-card tutor-card">
         <h2>Tutor</h2>
         <div class="role-actions">
-          <a class="btn" href="?type=tutor">Log In</a>
-          <a class="btn outline" href="?type=tutor">Sign Up</a>
+          <a class="btn" onclick="goToLogin('tutor');">Log In</a>
+          <a class="btn outline" onclick="goToSignup('tutor');">Sign Up</a>
+          
+          
         </div>
       </section>
     </div>
