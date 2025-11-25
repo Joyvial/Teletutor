@@ -15,10 +15,11 @@ Colors:
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 :root
 {
-    --accent-color: #7fa66a;
+    --accent-color: #dac4f3;
     --base-color: white;
     --text-color: black;
     --input-color: #7fa66a0c;
+    --background-image: url(images/purple-bg.png)
 }
 *
 {
@@ -35,24 +36,46 @@ html
 body
 {
     min-height: 100vh;
-    background-image: url(images/green-bg.png);
+    background-image: var(--background-image);
     background-size: 150%;
     background-position: center;
     overflow: hidden;
 }
 .wrapper
 {
-    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: content-box;
     background-color: var(--base-color);
-    height: 100vh;
-    width: max(30%, 450px);
+    height: 70vh;
+    width: max(40%, 600px);
     padding: 10px;
     border-radius: 0 5px 5px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px #638253;
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-color) 70%, black);
+}
+.landing-wrapper
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: content-box;
+    background-color: var(--base-color);
+    height: 70vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-color) 70%, black);
 }
 h1
 {
@@ -146,7 +169,7 @@ a:hover
 {
     .wrapper
     {
-        width: min(450px, 100%);
+        width: min(600px, 100%);
         border-radius: 0;
     }
 }
