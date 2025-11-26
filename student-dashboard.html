@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teletutor — Student Dashboard</title>
+  <link rel="stylesheet" href="styling.css"> <!-- fixed to match your repo -->
+</head>
+<body>
+  <!-- Sticky nav -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Teletutor</a>
+      <nav class="nav">
+        <a href="student-dashboard.html" class="active">Dashboard</a>
+        <a href="questions.html">Questions</a>
+        <a href="tutor-profile.html">Tutors</a>
+        <a href="login.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero small-hero">
+      <h1>Welcome back, <span id="student-name">Aron</span> 👋</h1>
+      <p class="muted">Keep practicing Calculus — here's what's active.</p>
+
+      <div class="cta-row">
+        <!-- FIXED: button -> link to ask_questions.html -->
+        <a href="ask_questions.html" class="btn primary">Ask a Question</a>
+
+        <!-- subscription badge -->
+        <span class="badge subscription" id="subscription-badge">Premium</span>
+      </div>
+    </section>
+
+    <!-- Active questions -->
+    <section>
+      <h2>Active Questions</h2>
+      <div id="active-questions" class="card-grid">
+        <!-- Question cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Available tutors -->
+    <section>
+      <h2>Available Tutors</h2>
+      <div id="tutors-list" class="card-grid">
+        <!-- Tutor cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Recent answers -->
+    <section>
+      <h2>Recent Answers</h2>
+      <div id="recent-answers" class="card-grid">
+        <!-- Mock recent answer cards -->
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initStudentDashboard({ name: 'Aron Hernandez', subscription: 'Premium' });
+    });
+  </script>
+</body>
+</html>
