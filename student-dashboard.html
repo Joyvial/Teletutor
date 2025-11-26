@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Teletutor — Student Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="styling.css"> <!-- fixed to match your repo -->
 </head>
 <body>
   <!-- Sticky nav -->
@@ -24,8 +24,12 @@
     <section class="hero small-hero">
       <h1>Welcome back, <span id="student-name">Aron</span> 👋</h1>
       <p class="muted">Keep practicing Calculus — here's what's active.</p>
+
       <div class="cta-row">
-        <button id="ask-question-btn" class="btn primary">Ask a Question</button>
+        <!-- FIXED: button -> link to ask_questions.html -->
+        <a href="ask_questions.html" class="btn primary">Ask a Question</a>
+
+        <!-- subscription badge -->
         <span class="badge subscription" id="subscription-badge">Premium</span>
       </div>
     </section>
@@ -55,41 +59,8 @@
     </section>
   </main>
 
-  <!-- Ask question modal (hidden by default) -->
-  <div id="modal-overlay" class="modal-overlay hidden">
-    <div class="modal">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <h3>Ask a Question</h3>
-      <form id="modal-ask-form">
-        <label>Title
-          <input type="text" id="q-title" required>
-        </label>
-        <label>Details
-          <textarea id="q-desc" rows="5" required></textarea>
-        </label>
-        <label>Subject
-          <select id="q-subject">
-            <option>Calculus</option>
-          </select>
-        </label>
-        <label>Urgency
-          <select id="q-urgency">
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-          </select>
-        </label>
-        <div class="form-actions">
-          <button type="submit" class="btn primary">Submit</button>
-          <button type="button" class="btn" id="modal-cancel">Cancel</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <script src="js/script.js"></script>
   <script>
-    // initialize the student dashboard with sample name & subscription
     document.addEventListener('DOMContentLoaded', () => {
       initStudentDashboard({ name: 'Aron Hernandez', subscription: 'Premium' });
     });
