@@ -32,22 +32,18 @@ To Do List:
     <link rel="stylesheet" href="styling.css">
     <script type="text/javascript" src="validation.js" defer></script>
 </head>
-<script> 
-      function goToLogin() 
-      { 
-        const params = new URLSearchParams(window.location.search);
-        const userType = params.get('userType');
-        window.location.href = `login.html?userType=${userType}`; 
-      } 
-      function goToSignup() 
-      { 
-        const params = new URLSearchParams(window.location.search);
-        const userType = params.get('userType');
-        window.location.href = `signup.html?userType=${userType}`; 
-      } 
-</script>
 <body>
     <div class="wrapper">
+        <div class="form-box" id="login-form">
+            <form action="">
+                <h1>Log In</h1>
+                <input required type="email" name="email" placeholder="Email" id="email-input">
+                <input required type="password" name="password" placeholder="Password" id="password-input">
+                <button type="submit" name="login">Log In</button>
+                <p1>Don't have an account? <a href="signup.html">Sign Up</a></p1>
+            </form>
+        </div>
+    <!--
         <h1>Log In</h1>
         <p id="error-message"></p>
         <form id="form">
@@ -61,7 +57,8 @@ To Do List:
             </div>
             <button type-"submit">Log In</button>
         </form>
-        <p1>Don't have an account? <a class="btn" onclick="goToSignup();">Sign Up</a></p1>
+        <p1>Don't have an account? <a href="signup.html">Sign Up</a></p1>
+    -->
     </div>
 </body>
 </html>

@@ -18,7 +18,7 @@ Colors:
     --accent-color: #dac4f3;
     --base-color: white;
     --text-color: black;
-    --input-color: hsl(from var(--accent-color) h s l / 0.10);
+    --input-color: #7fa66a0c;
     --background-image: url(images/purple-bg.png)
 }
 *
@@ -28,7 +28,7 @@ Colors:
 }
 html
 {
-    font-family: 'Gowun Dodum';
+    font-family: Gill sans, sans-serif;
     font-size: 12pt;
     color: var(--text-color);
     text-align: center;

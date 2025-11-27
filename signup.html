@@ -31,6 +31,20 @@ To Do List:
     <link rel="stylesheet" href="styling.css">
     <script type="text/javascript" src="validation.js" defer></script>
 </head>
+<script> 
+      function goToLogin() 
+      { 
+        const params = new URLSearchParams(window.location.search);
+        const userType = params.get('userType');
+        window.location.href = `login.html?userType=${userType}`; 
+      } 
+      function goToSignup() 
+      { 
+        const params = new URLSearchParams(window.location.search);
+        const userType = params.get('userType');
+        window.location.href = `signup.html?userType=${userType}`; 
+      } 
+</script>
 <body>
     <div class="wrapper">
         <h1>Sign Up</h1>
@@ -54,7 +68,7 @@ To Do List:
             </div>
             <button type-"submit">Sign Up</button>
         </form>
-        <p1>Already have an account? <a href="login.html">Log In</a></p1>
+        <p1>Already have an account? <a class="btn" onclick="goToLogin();">Log In</a></p1>
     </div>
 </body>
 </html>
