@@ -6,22 +6,47 @@ Group Name: Time Machine
 
 Slogan: Better Help, Better Study 
 
-1. Problem  Sometimes it’s like 11:52 p.m. and you have one question left on your assignment that you just do not understand. Wouldn’t it be nice if you could call someone up to explain the answer to you right away? Students often face last-minute confusion and lack of access to quick, reliable academic help, especially when time is running out without anyone there to provide immediate assistance for last minute problems.
+Introduction 
+Teletutor is a web-based academic support tool developed to alleviate one of the most prevalent challenges students experience today—needing trustworthy aid at the exact moment they become stuck. Many students find themselves looking at a difficult homework issue late at night, generally around midnight,  with no tutor available, no classmate awake, and no quick method to acquire clear academic help. While AI tools are available, they frequently give responses that lack context, accuracy, or the human touch that struggling students genuinely need. Additionally, traditional tutoring services have constrained timetables.
+We saw a big gap between instant accessibility and excellent, human-based learning help, which is why our crew decided to develop Teletutor. 
 
-2. Solution  Teletutor is the solution. The idea is to combine the open, community-style help of platforms like Reddit with the immediacy and reliability of professional tutoring where users can have access to real tutors in real time. Users can post questions and wait for a community answer for free, or choose to subscribe for instant professional assistance through on-call tutors there to help at a minute's notice.
-In a world where AI tools are becoming mainstream, this disconnects us from having access to real-life help from actual people who can explain, guide, and teach in the moment. That’s where Teletutor comes in; users are granted the ability to connect with tutors who can understand and relate to their struggles while offering more: including study tips, personal mnemonics that helped them along the way, and encouragement to provide more than simply a structured response
-There could even be a tiered model, allowing users to pay more for broader access across different subjects or specialized tutors. That way, the next time you have an assignment due and AI tools like ChatGPT aren’t making sense, you can call on Teletutor for better help and better study.
+Three different levels of support form the foundation of our platform:
+Free Community Model: Students can ask questions and get free, prompt assistance from peers or volunteer tutors.
+Scheduled Tutor Model - Users can arrange sessions with a specific tutor they trust and meet on a regular basis.
+Premium Instant Model: A more expensive subscription that gives students first access to tutors who are on call and can reply in a matter of minutes.
 
-3. Monetize  A monthly subscription provides access to a professional hotline in any subject, ensuring immediate, quality help whenever it’s needed.
+This tiered approach guarantees that students from all backgrounds can receive the support they require when they most need it, regardless of whether they desire premium academic aid or prefer free support.
 
-Teletutor will generate cash flow through a subscription-based model, offering several tiers of service.
+Teletutor enhances student learning from an academic standpoint by:
+Providing quick, trustworthy explanations for challenging subjects
+Giving individualised advice instead of generic AI answer
+Providing kids with a variety of viewpoints from different tutors
+Promoting effective study techniques and lowering stress in the last minute
+Supporting progress tracking and long-term improvement
 
-Free tier: Community-based question board.
-Standard subscription: Monthly fee for access to professional tutors in one subject area.
-Premium tier: Higher monthly fee for access to multiple subjects and priority response times.
-Ads: Built-in ads visible to users to generate additional revenue through sponsorships.
+Project Overview 
 
-This model creates a scalable and sustainable source of income while offering students flexibility in choosing the level of support they need
+Designing the beta version of Teletutor, a multi-page educational assistance website created for the CSCE 1015 course, is the main goal of this project. Our main goal was to design a working front-end prototype that showcases how the platform would work for different categories of users, how students will receive assistance, and how tutors will engage with the system. Although it lacks a complete database and backend, this version outlines the fundamental layout, navigation, and structure of an actual tutoring platform.
+
+The website is divided into a number of distinct pages, each of which is intended to replicate a certain user experience. We designed pages for Students, Tutors, Parents/Guardians, and Admin, all integrated by a uniform navigation system and shared layout.  Each page represents a typical flow a user would take when using an online teaching program.
+
+A crucial component of the project was the establishment of a working Q&A stream, where students can submit academic questions and tutors or community members can view and answer them. This simulates the free model of the platform. In order to highlight elements like question submission, answer viewing, tutor availability, possible earnings summaries, and session management, we have created dashboards for both students, tutors and  guardians so they can request to see their child's improvement in their grades. 
+
+As part of team collaboration, we followed a defined development workflow:
+Creating distinct branches for additional features
+Submitting pull requests before merging changes
+Keeping consistent file naming standards
+Keeping track of all decisions and meeting minutes
+Removing duplicate or obsolete files
+We are using GitHub as our version control system.
+
+In addition to the basic pages, we structured supportive elements including a centralised CSS file for styling, JavaScript validation for clean user input, and a clear folder hierarchy for images and future scripts. To provide uniformity and clarity, every file has a purposeful name.
+
+Conclusion 
+
+By developing a structured, multi-role web interface and outlining the fundamental movement between students, tutors, and guardians, this project establishes the foundation for the entire Teletutor platform. Although this beta version concentrates on front-end design, it also gets ready for a number of upcoming features, including parent monitoring tools, tutor profile systems, membership tiers, and long-term success tracking. Even though backend logic is still being developed, the existing layout clearly demonstrates where these components will integrate as the platform matures. Teletutor offers a well-rounded solution that is both academically significant and strategically designed for long-term business growth by fusing a free community-based assistance model with possibilities for professional, paid tutoring.
+
+Our ultimate goal is to create a platform that is accessible, user-friendly, and encouraging for students while also being useful from a business perspective. By providing immediate advice, individualised instruction, and scalable technologies that benefit both students and instructors, Teletutor fills a very genuine gap in academic support. As a modern approach to typical academic issues, Teletutor has the ability to provide students everywhere with more reliable aid, stronger study habits, and a better overall learning experience.
 
 Signatures:
 Tsedenya Ketema, 
@@ -29,40 +54,3 @@ Leticia Bromley,
 Lexie Dallison,
 Aron Hernandez,
 Pooja Lamsal
-
-___
-
-Notes
--add a license file
--ensure to add branches for individual pieces of code
--ensure to create pull requests to review code before committing
--delete duplicate files
--uniform naming of variables
-
-Beta Idea > Calculus (Pre through Multivariable) 
-
-Main Page > Login Page
-		-Student
-		-Teacher
-		-Parents
-		-Admin (only our group)
-
-Sub Pages:
-	> About Us
-	> Subscriptions 
-		> Different subscription model:
-			1) tutor anytime 24/7 (coming soon!) 
-			2) wait for beta success to hire more tutors to work on an hourly basis 
-			3) 3 shifts / day - 8 hour shifts where tutors are available
-			4) specific tutor model  - pay to work with one tutor of choice on a scheduled basis use this for beta
-
-
-free model — Reddit / ChatGPT based model with responses in real time but no access to direct tutors
-> Find a Tutor
-	> pages with information about all tutors
-
-Features:
-	>  graphing progress
-	>  about page about tutors 
-	> 
-
