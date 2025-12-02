@@ -27,20 +27,20 @@ form.addEventListener('submit', (e) =>
 {
     let errors = []
 
-    if (firstname_input)
-    {
+    if (firstname_input) {
         errors = getSignupFormErrors(firstname_input.value, email_input.value, password_input.value, repeat_password_input.value)
-    }
-    else
-    {
+    } else {
         errors = getLoginFormErrors(email_input.value, password_input.value)
     }
 
-    if (errors.length > 0)
-    {
+    if (errors.length > 0) {
         e.preventDefault()
         error_message.innerText = errors.join(". ") + "."
+        return;
     }
+
+     e.preventDefault();
++    goToPage();
 })
 
 function getSignupFormErrors(firstname, email, password, repeatPassword)
