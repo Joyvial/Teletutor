@@ -45,6 +45,36 @@ To Do List:
         const userType = params.get('userType');
         window.location.href = `signup.html?userType=${userType}`; 
       } 
+      function goToPage() 
+      {
+        const params = new URLSearchParams(window.location.search);
+        const userType = params.get('userType');
+
+        if (!userType) 
+        {
+          const sel = document.querySelector('input[name="userType"]:checked');
+          if (sel) userType = sel.value;
+        }
+
+        console.log('goToPage userType:', userType);
+
+        if (userType === 'guardian')
+        {
+          window.location.href = `guardian-dashboard.html`;
+        }
+        else if (userType === 'tutor')
+        {
+          window.location.href = `tutor-dashboard.html`;
+        } 
+        else if (userType === 'student')
+        {
+          window.location.href = `student-dashboard.html`;
+        }
+        else
+        {
+          window.location.href = `student-dashboard.html`;
+        }
+      }
 </script>
 <body>
     <div class="wrapper">
@@ -59,9 +89,9 @@ To Do List:
             <div>
                 <input type="password" name="password" id="password-input">
             </div>
-            <button type-"submit">Log In</button>
+            <button type="button" onclick="goToPage()">Log In</button>
         </form>
-        <p1>Don't have an account? <a class="btn" onclick="goToSignup();">Sign Up</a></p1>
+        <p1>Don't have an account? <a class="btn">Sign Up</a></p1>
     </div>
 </body>
 </html>
