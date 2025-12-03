@@ -5,9 +5,72 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Teletutor — Ask a Question</title>
   <link rel="stylesheet" href="styling.css">
+
+  <!-- New Styling for Centered Form -->
+  <style>
+    /* Wrapper for the whole form so it stays centered */
+    .ask-container {
+      max-width: 500px;
+      margin: 100px auto;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+    }
+
+    .ask-container h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 12px;
+      color: #333;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #fff;
+    }
+
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #7fa66a; /* your green theme */
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- HEADER (unchanged) -->
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Teletutor</a>
@@ -20,54 +83,38 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero small-hero">
-      <h1>Ask a Question</h1>
-      <p class="muted">Provide your question details and we'll help connect you with a tutor.</p>
-    </section>
+  <!-- NEW CENTERED FORM -->
+  <div class="ask-container">
+    <h1>ASK A QUESTION</h1>
 
-    <section class="card form-card">
-      <form id="ask-form">
-        <label>
-          <span>Title</span>
-          <input type="text" id="q-title" required />
-        </label>
+    <form id="ask-form">
 
-        <label>
-          <span>Details</span>
-          <textarea id="q-desc" rows="6" required></textarea>
-        </label>
+      <label>Title</label>
+      <input type="text" id="q-title" required>
 
-        <label>
-          <span>Subject</span>
-          <select id="q-subject">
-            <option>Calculus</option>
-            <option>Algebra</option>
-            <option>Physics</option>
-            <option>Chemistry</option>
-          </select>
-        </label>
+      <label>Details</label>
+      <textarea id="q-desc" required></textarea>
 
-        <label>
-          <span>Urgency</span>
-          <select id="q-urgency">
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-          </select>
-        </label>
+      <label>Subject</label>
+      <select id="q-subject">
+        <option>Calculus</option>
+        <option>Algebra</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+      </select>
 
-        <div class="form-actions">
-          <button type="submit" class="btn primary">Submit Question</button>
-          <a href="student-dashboard.html" class="btn">Cancel</a>
-        </div>
-      </form>
-    </section>
-  </main>
+      <label>Urgency</label>
+      <select id="q-urgency">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
 
-  <script src="js/script.js"></script>
+      <button type="submit" class="submit-btn">Submit Question</button>
+    </form>
+  </div>
 
-  <!--integrated question-saving script -->
+  <!-- Your question-saving script (unchanged) -->
   <script>
     document.getElementById('ask-form').addEventListener('submit', (e) => {
       e.preventDefault();
@@ -92,3 +139,4 @@
 
 </body>
 </html>
+
