@@ -6,14 +6,12 @@
   <title>Teletutor — Student Dashboard</title>
   <link rel="stylesheet" href="styling.css">
 </head>
-
 <body>
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Teletutor</a>
       <nav class="nav">
         <a href="student-dashboard.html" class="active">Dashboard</a>
-        <a href="ask-questions.html">Ask Question</a>
         <a href="questions.html">Questions</a>
         <a href="tutor-profile.html">Tutors</a>
         <a href="login.html">Logout</a>
@@ -27,24 +25,21 @@
       <p class="muted">Keep practicing Calculus — here's what's active.</p>
 
       <div class="cta-row">
-        <a href="ask-questions.html" class="btn primary">Ask a Question</a>
+        <a href="ask_questions.html" class="btn primary">Ask a Question</a>
         <span class="badge subscription" id="subscription-badge">Premium</span>
       </div>
     </section>
 
-    <!-- Active questions -->
     <section>
       <h2>Active Questions</h2>
       <div id="active-questions" class="card-grid"></div>
     </section>
 
-    <!-- Available tutors -->
     <section>
       <h2>Available Tutors</h2>
       <div id="tutors-list" class="card-grid"></div>
     </section>
 
-    <!-- Recent answers -->
     <section>
       <h2>Recent Answers</h2>
       <div id="recent-answers" class="card-grid"></div>
@@ -52,13 +47,9 @@
   </main>
 
   <script src="js/script.js"></script>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      initStudentDashboard({
-        name: 'Aron Hernandez', 
-        subscription: 'Premium'
-      });
+      initStudentDashboard({ name: 'Aron Hernandez', subscription: 'Premium' });
     });
   </script>
 </body>
