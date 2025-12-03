@@ -66,14 +66,29 @@
   </main>
 
   <script src="js/script.js"></script>
+
+  <!--integrated question-saving script -->
   <script>
-    // Simple demo handler (you can replace with final logic)
     document.getElementById('ask-form').addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Your question has been submitted!');
+
+      const stored = JSON.parse(localStorage.getItem("questions")) || [];
+
+      const newQuestion = {
+        title: document.getElementById('q-title').value,
+        desc: document.getElementById('q-desc').value,
+        subject: document.getElementById('q-subject').value,
+        urgency: document.getElementById('q-urgency').value,
+        date: new Date().toLocaleString()
+      };
+
+      stored.push(newQuestion);
+      localStorage.setItem("questions", JSON.stringify(stored));
+
+      alert("Your question has been submitted!");
       window.location.href = "questions.html";
     });
   </script>
+
 </body>
 </html>
-
