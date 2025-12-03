@@ -40,7 +40,7 @@ const sampleQuestions = [
   }
 ];
 
-// ---------- ONE ACTIVE TUTOR ONLY (Matches tutor.html) ----------
+// ---------- ONE ACTIVE TUTOR ONLY (Matches tutor-profile.html) ----------
 const sampleTutors = [
   { 
     id: 't1', 
@@ -98,7 +98,7 @@ function renderQuestions(filter = 'all') {
       </div>
       <div style="text-align:right">
         <div class="badge">${q.urgency}</div>
-        <div style="margin-top:.6rem"><a class="btn" href="tutor.html">View</a></div>
+        <div style="margin-top:.6rem"><a class="btn" href="tutor-profile.html">View</a></div>
       </div>
     `;
     container.appendChild(card);
@@ -124,7 +124,7 @@ function renderTutors() {
       <span class="badge" style="background:var(--secondary); color:white">Online</span>
     </p>
     <div style="margin-top:.6rem">
-      <a class="btn primary" href="tutor.html">View Profile</a>
+      <a class="btn primary" href="tutor-profile.html">View Profile</a>
     </div>
   `;
   container.appendChild(el);
@@ -243,3 +243,4 @@ window.renderQuestions = renderQuestions;
 window.filterQuestions = filterQuestions;
 window.attachAskFormHandler = attachAskFormHandler;
 window.initStudentDashboard = initStudentDashboard;
+
