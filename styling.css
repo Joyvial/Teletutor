@@ -39,7 +39,6 @@ body
     background-image: var(--background-image);
     background-size: 150%;
     background-position: center;
-    overflow: hidden;
 }
 .wrapper
 {
