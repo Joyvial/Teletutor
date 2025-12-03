@@ -1,6 +1,5 @@
 // js/script.js
 // Basic mock data and interactions for Student + Questions pages.
-// Save this to js/script.js and expand later.
 
 // ---------- Mock data ----------
 const MOCK_QUESTIONS_KEY = 'teletutor_questions_v1';
@@ -13,7 +12,7 @@ const sampleQuestions = [
     subject: "Calculus",
     urgency: "Medium",
     postedBy: "Emily Chen",
-    timePosted: Date.now() - 1000 * 60 * 60 * 2, // 2 hours ago
+    timePosted: Date.now() - 1000 * 60 * 60 * 2,
     responses: 2,
     answered: true
   },
@@ -24,7 +23,7 @@ const sampleQuestions = [
     subject: "Calculus",
     urgency: "Low",
     postedBy: "Marcus Johnson",
-    timePosted: Date.now() - 1000 * 60 * 60 * 5, // 5 hours ago
+    timePosted: Date.now() - 1000 * 60 * 60 * 5,
     responses: 0,
     answered: false
   },
@@ -35,16 +34,21 @@ const sampleQuestions = [
     subject: "Calculus",
     urgency: "High",
     postedBy: "Sarah Williams",
-    timePosted: Date.now() - 1000 * 60 * 60 * 24, // 1 day ago
+    timePosted: Date.now() - 1000 * 60 * 60 * 24,
     responses: 1,
     answered: false
   }
 ];
 
+// ---------- ONE ACTIVE TUTOR ONLY (Matches tutor.html) ----------
 const sampleTutors = [
-  { id: 't1', name: 'Dr. Alex Rivera', expertise: 'Calculus', rating: 4.9, online: true },
-  { id: 't2', name: 'Jennifer Park', expertise: 'Calculus', rating: 4.7, online: false },
-  { id: 't3', name: 'Michael Thompson', expertise: 'Calculus', rating: 4.8, online: true }
+  { 
+    id: 't1', 
+    name: 'Alex Karen', 
+    expertise: 'Mathematics (Algebra → Multivariable Calculus)', 
+    rating: 4.9, 
+    online: true 
+  }
 ];
 
 // ---------- Helpers ----------
@@ -72,12 +76,12 @@ function timeAgo(ts) {
   return `${Math.floor(diff/86400)}d ago`;
 }
 
-// ---------- Render functions ----------
+// ---------- Render questions ----------
 function renderQuestions(filter = 'all') {
   const container = document.getElementById('questions-list') || document.getElementById('active-questions');
   if (!container) return;
   const all = readQuestionsFromStorage();
-  let list = all.slice().reverse(); // newest first
+  let list = all.slice().reverse();
 
   if (filter === 'answered') list = list.filter(q => q.answered);
   if (filter === 'unanswered') list = list.filter(q => !q.answered);
@@ -94,39 +98,49 @@ function renderQuestions(filter = 'all') {
       </div>
       <div style="text-align:right">
         <div class="badge">${q.urgency}</div>
-        <div style="margin-top:.6rem"><a class="btn" href="tutor-profile.html">View</a></div>
+        <div style="margin-top:.6rem"><a class="btn" href="tutor.html">View</a></div>
       </div>
     `;
     container.appendChild(card);
   });
 }
 
+// ---------- Render ONE tutor ----------
 function renderTutors() {
   const container = document.getElementById('tutors-list');
   if (!container) return;
+
   container.innerHTML = '';
-  sampleTutors.forEach(t => {
-    const el = document.createElement('div');
-    el.className = 'card';
-    el.innerHTML = `
-      <h3>${t.name}</h3>
-      <div class="muted">${t.expertise} • ${t.rating}★</div>
-      <p style="margin-top:.5rem">${t.online ? '<span class="badge" style="background:var(--secondary); color:white">Online</span>' : '<span class="badge">Offline</span>'}</p>
-      <div style="margin-top:.6rem"><a class="btn primary" href="tutor-profile.html">Request Session</a></div>
-    `;
-    container.appendChild(el);
-  });
+
+  // Only one tutor exists
+  const t = sampleTutors[0];
+
+  const el = document.createElement('div');
+  el.className = 'card';
+  el.innerHTML = `
+    <h3>${t.name}</h3>
+    <div class="muted">${t.expertise} • ${t.rating}★</div>
+    <p style="margin-top:.5rem">
+      <span class="badge" style="background:var(--secondary); color:white">Online</span>
+    </p>
+    <div style="margin-top:.6rem">
+      <a class="btn primary" href="tutor.html">View Profile</a>
+    </div>
+  `;
+  container.appendChild(el);
 }
 
+// ---------- Render Recent Answers ----------
 function renderRecentAnswers() {
   const container = document.getElementById('recent-answers');
   if (!container) return;
-  // simple mock
+
   container.innerHTML = '';
+
   const sample = [
-    { tutor: 'Dr. Alex Rivera', snippet: "Use substitution and check the derivative of the inner function." },
-    { tutor: 'Jennifer Park', snippet: "Try rewriting and simplify the fraction first." }
+    { tutor: 'Alex Karen', snippet: "Try breaking the problem into smaller algebraic steps." }
   ];
+
   sample.forEach(s => {
     const card = document.createElement('div');
     card.className = 'card';
@@ -135,10 +149,11 @@ function renderRecentAnswers() {
   });
 }
 
-// ---------- Ask question handlers ----------
+// ---------- Ask Question Form ----------
 function attachAskFormHandler() {
   const askForm = document.getElementById('ask-form');
   if (!askForm) return;
+
   askForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     const title = document.getElementById('title').value.trim();
@@ -157,29 +172,28 @@ function attachAskFormHandler() {
     };
     list.push(newQ);
     writeQuestionsToStorage(list);
-    // redirect back to dashboard or questions
     window.location.href = 'student-dashboard.html';
   });
 }
 
-// For modal in dashboard:
+// ---------- Dashboard init ----------
 function initStudentDashboard({ name = 'Student', subscription = 'Free' } = {}) {
   document.getElementById('student-name').textContent = name.split(' ')[0] || name;
   document.getElementById('subscription-badge').textContent = subscription;
-  renderQuestions('all'); // active questions area (uses same source)
+
+  renderQuestions('all');
   renderTutors();
   renderRecentAnswers();
 
-  // modal show/hide
   const askBtn = document.getElementById('ask-question-btn');
   const overlay = document.getElementById('modal-overlay');
   const closeBtn = document.getElementById('modal-close');
   const cancelBtn = document.getElementById('modal-cancel');
+
   if (askBtn) askBtn.addEventListener('click', () => overlay.classList.remove('hidden'));
   if (closeBtn) closeBtn.addEventListener('click', () => overlay.classList.add('hidden'));
   if (cancelBtn) cancelBtn.addEventListener('click', () => overlay.classList.add('hidden'));
 
-  // modal form submit
   const modalForm = document.getElementById('modal-ask-form');
   if (modalForm) {
     modalForm.addEventListener('submit', (e) => {
@@ -188,13 +202,26 @@ function initStudentDashboard({ name = 'Student', subscription = 'Free' } = {}) 
       const desc = document.getElementById('q-desc').value.trim();
       const subject = document.getElementById('q-subject').value;
       const urgency = document.getElementById('q-urgency').value;
+
       if (!title || !desc) { alert('Please fill required fields.'); return; }
+
       const list = readQuestionsFromStorage();
-      const newQ = { id: Date.now(), title, description: desc, subject, urgency, postedBy: name, timePosted: Date.now(), responses:0, answered:false };
+      const newQ = { 
+        id: Date.now(), 
+        title, 
+        description: desc, 
+        subject, 
+        urgency, 
+        postedBy: name, 
+        timePosted: Date.now(), 
+        responses:0, 
+        answered:false 
+      };
+
       list.push(newQ);
       writeQuestionsToStorage(list);
       overlay.classList.add('hidden');
-      renderQuestions('all'); // refresh active questions
+      renderQuestions('all');
     });
   }
 }
@@ -211,7 +238,7 @@ function escapeHtml(s) {
   return s.replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[m]; });
 }
 
-// Expose some functions globally for inline onclick use
+// Expose global
 window.renderQuestions = renderQuestions;
 window.filterQuestions = filterQuestions;
 window.attachAskFormHandler = attachAskFormHandler;
