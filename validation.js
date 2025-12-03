@@ -108,3 +108,23 @@ allInputs.forEach(input =>
         }
     })
 })
+
+// Load all questions from storage
+function loadQuestions() {
+  return JSON.parse(localStorage.getItem("questions")) || [];
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const list = loadQuestions();
+  const container = document.getElementById('questions-container');
+
+  container.innerHTML = list.map(q => `
+    <div class="card">
+      <h3>${q.title}</h3>
+      <p>${q.desc}</p>
+      <p><strong>Subject:</strong> ${q.subject}</p>
+      <p><strong>Urgency:</strong> ${q.urgency}</p>
+      <p class="muted">${q.date}</p>
+    </div>
+  `).join('');
+});
