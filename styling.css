@@ -179,3 +179,58 @@ form div.incorrect input
     font-style: italic;
     font-weight: 600;
 }
+
+/* 
+   STUDENT DASHBOARD - ISOLATED FIXES (Affects ONLY Aron)
+*/
+
+body.student-dashboard .nav a {
+  color: black !important;
+  font-weight: 600;
+}
+
+/* Center hero section & make text readable */
+body.student-dashboard .hero,
+body.student-dashboard .small-hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Fix card layout and center everything */
+body.student-dashboard .card-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+/* Make the Ask a Question button pop */
+body.student-dashboard .btn.primary {
+  display: inline-block;
+  background: black !important;
+  color: white !important;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Keep Premium badge visible */
+body.student-dashboard .badge.subscription {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Fix container width so everything stays centered */
+body.student-dashboard .container,
+body.student-dashboard section {
+  max-width: 900px;
+  margin: auto;
+}
