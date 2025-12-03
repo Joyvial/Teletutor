@@ -1,52 +1,146 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tutor Dashboard</title>
     <meta charset="UTF-8">
+    <title>Tutor Dashboard</title>
+
     <style>
+    /* ===== Global Styling ===== */
     body {
-        font-family: Arial, sans-serif;
-        max-width: 700px;
-        margin: 20px auto;
+        font-family: 'Inter', Arial, sans-serif;
+        background: linear-gradient(to bottom right, #ffe5e9, #ffd2d9);
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Page title */
+    h1 {
+        text-align: center;
+        color: #c43b55;
+        margin-bottom: 25px;
+    }
+
+    /* Main container */
+    .dashboard-container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 0 20px 30px;
+    }
+
+    /* Section cards */
+    .card {
+        background: #ffffff;
         padding: 20px;
-        background: #f9f9f9;
+        margin-bottom: 25px;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    h1, h2 {
-        color: #333;
-    }
-
-    img {
-        display: block;
-        margin: 10px auto;
-        border-radius: 50%;
-        width: 150px;
-    }
-
-    ul {
-        padding-left: 20px;
-    }
-
-    li {
-        margin-bottom: 5px;
+    .card h2 {
+        color: #c43b55;
+        margin-top: 0;
+        border-left: 4px solid #c43b55;
+        padding-left: 10px;
+        font-weight: 600;
     }
 
     p strong {
         color: #444;
     }
 
-    .section {
-        margin-bottom: 20px;
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 15px;
     }
-</style>
+
+    table th {
+        background: #c43b55;
+        color: #ffffff;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table td {
+        padding: 10px;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    table tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+
+    /* Forms, inputs, textareas */
+    input[type="text"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 12px;
+        font-size: 15px;
+        box-sizing: border-box;
+        background: #ffffff;
+    }
+
+    textarea[readonly] {
+        background: #fafafa;
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    /* Radio labels inline */
+    .radio-group label {
+        display: inline-block;
+        margin-right: 20px;
+        font-size: 15px;
+    }
+
+    /* Buttons */
+    button,
+    input[type="submit"] {
+        background: #c43b55;
+        color: #ffffff;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background 0.2s;
+    }
+
+    button:hover,
+    input[type="submit"]:hover {
+        background: #a82f45;
+    }
+
+    /* Earnings highlight (optional) */
+    .summary-note {
+        margin-top: 10px;
+        background: #fff5f7;
+        border-left: 4px solid #c43b55;
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+    </style>
 </head>
 <body>
+
+<div class="dashboard-container">
 
     <h1>Tutor Dashboard</h1>
 
     <!-- Welcome / Goodbye messages (FROM Alex Karen TO students) -->
-    <section>
+    <div class="card">
         <h2>Messages from Alex Karen</h2>
         <p><strong>Welcome message:</strong> 
             Hello student! This is Alex Karen. I’m excited to help you learn and understand mathematics today.
@@ -55,28 +149,30 @@
         <p><strong>Goodbye message:</strong> 
             Thank you for studying with me! – Alex Karen
         </p>
-    </section>
+    </div>
 
     <!-- Availability toggle -->
-    <section>
+    <div class="card">
         <h2>Alex Karen’s Availability</h2>
         <p>Select current tutoring status:</p>
 
-        <label>
-            <input type="radio" name="availability" value="available">
-            Available
-        </label><br>
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="availability" value="available">
+                Available
+            </label>
 
-        <label>
-            <input type="radio" name="availability" value="unavailable">
-            Unavailable
-        </label>
-    </section>
+            <label>
+                <input type="radio" name="availability" value="unavailable">
+                Unavailable
+            </label>
+        </div>
+    </div>
 
     <!-- Questions from students -->
-    <section>
+    <div class="card">
         <h2>Questions from Students</h2>
-        <table border="1">
+        <table>
             <tr>
                 <th>Student Name</th>
                 <th>Subject</th>
@@ -96,49 +192,46 @@
                 <td>Answered</td>
             </tr>
         </table>
-    </section>
+    </div>
 
     <!-- Writing grades -->
-    <section>
+    <div class="card">
         <h2>Enter / Update Grades</h2>
         <form>
             <label>Student Name:
                 <input type="text" name="studentName">
-            </label><br><br>
+            </label>
 
             <label>Course:
                 <input type="text" name="courseName">
-            </label><br><br>
+            </label>
 
             <label>Grade:
                 <input type="text" name="grade">
-            </label><br><br>
+            </label>
 
             <input type="submit" value="Save Grade">
         </form>
-    </section>
+    </div>
 
     <!-- Answer Question Interface -->
-    <section>
+    <div class="card">
         <h2>Answer a Question</h2>
         <form>
             <p><strong>Selected question from a student:</strong></p>
-            <textarea rows="3" cols="60" readonly>
-Example: Can you help me with partial derivatives?
-            </textarea><br><br>
+            <textarea rows="3" readonly>Example: Can you help me with partial derivatives?</textarea>
 
-            <label>Your Answer (Alex Karen):<br>
-                <textarea rows="5" cols="60" name="answer"></textarea>
-            </label><br><br>
+            <label>Your Answer (Alex Karen):</label>
+            <textarea rows="5" name="answer"></textarea>
 
             <input type="submit" value="Send Answer">
         </form>
-    </section>
+    </div>
 
     <!-- Tutor summary earnings -->
-    <section>
+    <div class="card">
         <h2>Alex Karen’s Earnings Summary</h2>
-        <table border="1">
+        <table>
             <tr>
                 <th>Total Sessions</th>
                 <th>Rate per Session</th>
@@ -150,13 +243,18 @@ Example: Can you help me with partial derivatives?
                 <td>$250</td>
             </tr>
         </table>
-    </section>
+        <div class="summary-note">
+            Earnings are calculated as <strong>Total Sessions × Rate per Session</strong>.
+        </div>
+    </div>
 
     <!-- Student session request button -->
-    <section>
+    <div class="card">
         <h2>Request a Session with Alex Karen</h2>
         <button type="button">Request Session</button>
-    </section>
+    </div>
+
+</div>
 
 </body>
 </html>
