@@ -1,94 +1,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tutor Profile</title>
     <meta charset="UTF-8">
+    <title>Tutor Profile</title>
+
 <style>
     body {
-        font-family: Arial, sans-serif;
-        max-width: 700px;
-        margin: 20px auto;
-        padding: 20px;
-        background: #f9f9f9;
+        font-family: 'Inter', Arial, sans-serif;
+        background: linear-gradient(to bottom right, #ffe5e9, #ffd2d9);
+        margin: 0;
+        padding: 0;
     }
 
-    h1, h2 {
-        color: #333;
+    .container {
+        max-width: 850px;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #c43b55;
+    }
+
+    .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        color: #c43b55;
+        border-left: 4px solid #c43b55;
+        padding-left: 8px;
+        margin-top: 0;
     }
 
     img {
-        display: block;
-        margin: 10px auto;
+        width: 140px;
         border-radius: 50%;
-        width: 150px;
+        display: block;
+        margin: 10px auto 20px;
+        border: 3px solid #c43b55;
     }
 
-    ul {
-        padding-left: 20px;
+    ul { padding-left: 18px; }
+    li { margin-bottom: 6px; color: #444; }
+
+    button {
+        background: #c43b55;
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
     }
 
-    li {
-        margin-bottom: 5px;
-    }
-
-    p strong {
-        color: #444;
-    }
-
-    .section {
-        margin-bottom: 20px;
+    button:hover {
+        background: #a82f45;
     }
 </style>
 </head>
+
 <body>
+<div class="container">
 
     <h1>Tutor Profile</h1>
 
-    <!-- About the tutor -->
-    <h2>About the Tutor</h2>
-    <img src="tutor-photo.jpg" alt="Tutor Photo" width="150">
+    <div class="card">
+        <img src="tutor-photo.jpg" alt="Tutor Photo">
+        <h2>About the Tutor</h2>
+        <p><strong>Name:</strong> Alex Karen</p>
+        <p><strong>Profession:</strong> Mathematics Tutor</p>
+        <p>
+            Alex specializes in Algebra through Multivariable Calculus, helping students
+            understand concepts through clear explanations and step-by-step methods.
+        </p>
+    </div>
 
-    <p><strong>Name:</strong> Alex Karen</p>
-    <p><strong>Profession:</strong> Mathematics Tutor</p>
+    <div class="card">
+        <h2>Student Reviews</h2>
+        <ul>
+            <li>“Explains concepts in a way that finally makes sense.”</li>
+            <li>“Very patient and knowledgeable in calculus.”</li>
+        </ul>
+    </div>
 
-    <p><strong>Bio:</strong>
-        Alex Karev is a dedicated math tutor with experience helping students
-        understand subjects ranging from Algebra to Multivariable Calculus. He focuses on
-        breaking down complex problems into simple, clear steps. Alex enjoys
-        teaching students at different levels and helping them build confidence
-        in math through practice, patience, and personalized explanations.
-    </p>
+    <div class="card">
+        <h2>Rate</h2>
+        <p><strong>$15 per 1-hour session</strong></p>
+    </div>
 
-    <!-- Reviews -->
-    <h2>Student Reviews</h2>
-    <ul>
-        <li>"Mr. Karev explains concepts in a way that finally makes sense." – ★★★★★</li>
-        <li>"Very patient and knowledgeable in calculus topics." – ★★★★☆</li>
-    </ul>
+    <div class="card">
+        <h2>Subjects Taught</h2>
+        <ul>
+            <li>Algebra</li>
+            <li>Pre-Calculus</li>
+            <li>Calculus I</li>
+            <li>Calculus II</li>
+            <li>Multivariable Calculus</li>
+        </ul>
+    </div>
 
-    <!-- Salary per session -->
-    <h2>Salary Per Session</h2>
-    <p><strong>$15 per 1-hour session</strong></p>
+    <div class="card">
+        <h2>Availability</h2>
+        <ul>
+            <li>Monday: 4–8 PM</li>
+            <li>Wednesday: 5–9 PM</li>
+            <li>Thursday: 7:30–11 PM</li>
+            <li>Friday: 3–7 PM</li>
+            <li>Saturday: 10 AM–1 PM</li>
+        </ul>
+    </div>
 
-    <!-- Subjects taught -->
-    <h2>Subjects Taught</h2>
-    <ul>
-        <li>Algebra</li>
-        <li>Pre-Calculus</li>
-        <li>Calculus I</li>
-        <li>Calculus II</li> 
-        <li>Multivariable Calculus</li>
-    </ul>
+    <button>Request a Session</button>
 
-    <!-- Availability -->
-    <h2>Availability Hours</h2>
-    <ul>
-        <li>Monday: 4:00 PM – 8:00 PM</li>
-        <li>Wednesday: 5:00 PM – 9:00 PM</li>
-        <li>Thursday: 7:30 PM - 11:00PM 
-        <li>Friday: 3:00 PM – 7:00 PM</li>
-        <li>Saturday: 10:00 AM – 1:00 PM</li>
-    </ul>
-
+</div>
 </body>
 </html>
